@@ -10,45 +10,11 @@
         <h1>Google Drive Photo Viewer</h1>
         <img id="photo" src="https://lh3.googleusercontent.com/pw/AP1GczPBnnSVlfZ0e_T8Ip0vl1R3njkAM7sxUUcL83OZEi609MH_nyvTqxTp7IE2oUhQ-4AS829bSe3bxaGFC6O6PXgDOV2fKZVaQyKexxdpy7ICllHFUfUbV2AzYiDO4w3Gxqd_bhQyJrcRTUmKAw7Rso5kTeqQQuVa0LYOE3llzjoEbREWwZRWZoitaC8BMQWC8o9FSykfABhD0u2fxgOZ_lrmZxLhYB7suRrMIRtqCD0sQLasT0AbPr99o0JoVGYMcYa40nVy75cvF9rgRatvRl7xePM9tpZUclES1gIyNXNZIGFRB2FSPnjFMjWLM5x03q5BnuNb2dAJ1EuFVMJeJqbLgCQexNmmkSf1CcGGh_NsRztzg8vUwEQ8eOI9KEtxbS4C3OSk71JN_9scmQRz9Au_c4uzJLL_VUN6rNWgG8XABXb4Ek2Jn4xh0_rkePkqQssr_xQUUvEGyp6mlciVc9jBMpMmLJRmgiHZ4sJtKJVONogzoQbNyCHwkYmnYPHqNHfhaq0OaMGGELRqiQ6UKnnUukqqPLr1hUWPS80wHxPa3xjnzbsmpGBveELNri0UvxWBEiGesyIgRCiESTV5-kM7Bucwj6Vkd3IvchrVxq55K35DEpQnejeDBHwl4ljHWN8ZnRPrjIKpqeaVlub1Y-NNvb9MSYEk-grdsYOEngeJBZSYpcmFjwYRaWkhcti3VDxi4GApXr6hF6-bNJU9RmsPMM5MWoOejBV6YMenead8tOpAHvKAcMaQafj2iQhJYFfFKVipW64v0MBy_I2_i6H8ZbNQ0b5-i8RYxHBMRtnVONEvSzgnHjOT2n6oAXhKUnz3rZTlAENZdOwzAx7YEvrOTGA-A5k7XX4eYbrIBHJrZiKOkY-iPTb1nzgbfwWx95ANLB-VlFvAOkaZqVBI0A=w627-h945-s-no-gm?authuser=0" alt="Photo">
     </div>
+
+    <iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/8i9EXaTY#YJB5XggwNv1C-2kur5z35D6JUubBGZy1Cb4DDgqF8SI!1a" allowfullscreen allow="autoplay;"></iframe>
+
 </body>
     </div>
 
-    <script>
-        // Replace with your API key and appropriate scope
-        const apiKey = 'YOUR_API_KEY';
-        const clientId = 'YOUR_CLIENT_ID';
-        const scope = 'https://www.googleapis.com/auth/drive.readonly';
-
-        // Function to initialize Google Drive API client
-        function initClient() {
-            gapi.client.init({
-                apiKey: apiKey,
-                clientId: clientId,
-                scope: scope
-            }).then(function() {
-                // Google Drive API client is initialized, fetch file
-                fetchImage();
-            });
-        }
-
-        // Function to fetch image from Google Drive
-        function fetchImage() {
-            gapi.client.drive.files.get({
-                fileId: 'YOUR_IMAGE_FILE_ID',
-                fields: 'webViewLink'
-            }).then(function(response) {
-                const webViewLink = response.result.webViewLink;
-                const imageElement = document.getElementById('photo');
-                imageElement.src = webViewLink;
-            }, function(error) {
-                console.error('Error fetching image:', error);
-            });
-        }
-
-        // Load the Google Drive API client
-        gapi.load('client', initClient);
-    </script>
-    <!-- Load the Google API client library -->
-    <script src="https://apis.google.com/js/api.js"></script>
 </body>
 </html>
