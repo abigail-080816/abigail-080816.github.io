@@ -15,6 +15,13 @@
 	</head>
 	<body class="is-preload">
 
+				<!-- Background Music -->
+				<audio id="background-music" loop autoplay muted>
+					<source src="/music/time.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+				
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -474,6 +481,19 @@ print 'Sorted in ' + i + ' iterations.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+				window.addEventListener('load', () => {
+					const audio = document.getElementById('background-music');
+					audio.volume = 0.2; // Set volume to 20%
+					audio.muted = true; // Start muted
+					audio.play().then(() => {
+						audio.muted = false; // Unmute after play begins
+					}).catch(err => {
+						console.error('Failed to play audio:', err);
+					});
+				});
+			</script>
 
 	</body>
 </html>
