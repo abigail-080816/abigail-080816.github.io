@@ -2,22 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-
-    <meta name="viewport" content="width=device-width, user-scalable=no" />    
-
-    <script>
-      if(navigator.userAgent.match(/Android/i)
-  || navigator.userAgent.match(/webOS/i)
-  || navigator.userAgent.match(/iPhone/i)
-  || navigator.userAgent.match(/iPad/i)
-  || navigator.userAgent.match(/iPod/i)
-  || navigator.userAgent.match(/BlackBerry/i)
-  || navigator.userAgent.match(/Windows Phone/i)) {
-    document.write('<meta name="viewport" content="width=device-width, user-scalable=no" />');
-}
-    </script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/20917bf5c7.js" crossorigin="anonymous"></script>
 
@@ -27,8 +12,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Teko:wght@300..700&display=swap" rel="stylesheet">
 
     <title>Happy Anniversary, My Abigail</title>
+
+    <style>
+      .glow {
+          filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.5)) 
+                  drop-shadow(0 0 100px rgba(255, 255, 255, 0.4)) 
+                  drop-shadow(0 0 150px rgba(255, 255, 255, 0.3));
+          transition: filter 0.3s ease-in-out;
+      }
+
+      body {
+          scroll-behavior: smooth;
+      }
+
+      #nextSection {
+          padding-top: 100vh; /* Ensure the next section is initially off-screen */
+      }
+  </style>
+  
+  
+  
+
 </head>
-<body class="text-center font-serif bg-black text-white overflow-hidden">
+<body class="text-center font-serif bg-black text-white">
     
         <h1 class="pt-5 pb-3 font-bold text-2xl">Congratulations, My Abigail</h1>
         <p class="text-3xl" id="handpicked">08 | 14 | 24</p>
@@ -49,6 +55,22 @@
 
 
     <!--<iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/8i9EXaTY#YJB5XggwNv1C-2kur5z35D6JUubBGZy1Cb4DDgqF8SI!1a" allowfullscreen allow="autoplay;"></iframe> -->
+
+
+    <script>
+      window.addEventListener('scroll', function() {
+          const img = document.getElementById('photo');
+          if (window.scrollY > 50) {  // You can adjust the scroll value as needed
+              img.classList.add('glow');
+          } else {
+              img.classList.remove('glow');
+          }
+      });
+
+      
+  </script>
+  
+  
 
 </body>
     </div>
