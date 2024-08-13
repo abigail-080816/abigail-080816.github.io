@@ -7,6 +7,38 @@
 <html>
 	<head>
 		<title>Abigail, Happy Anniversary</title>
+
+		<style>
+			/* Scoped styles for password protection */
+			.password-protection-wrapper {
+				font-family: Arial, sans-serif;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				margin: 0;
+			}
+			.password-form {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 300px;
+				border: 1px solid #ccc;
+				padding: 20px;
+				border-radius: 5px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			}
+			.password-input, .password-submit {
+				margin: 10px 0;
+				padding: 10px;
+				width: 100%;
+			}
+			.protected-content {
+				display: none;
+				text-align: center;
+			}
+		</style>
+
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="" />
@@ -17,11 +49,25 @@
 	</head>
 	<body class="is-preload">
 
+
+		<div class="password-protection-wrapper" id="passwordWrapper">
+			<div class="password-form" id="passwordForm">
+				<h2>Enter Password</h2>
+				<input type="password" class="password-input" id="password" placeholder="Password">
+				<input type="submit" class="password-submit" value="Submit" onclick="checkPassword()">
+			</div>
+		</div>
+
+
+
+		<div class="protected-content" id="content">
+
+
 				<!-- Background Music -->
-				<!-- <audio id="background-music" loop autoplay muted>
+				<audio id="background-music" loop autoplay muted>
 					<source src="/music/time.mp3" type="audio/mpeg">
 					Your browser does not support the audio element.
-				</audio> -->
+				</audio> 
 				
 
 		<!-- Wrapper -->
@@ -829,6 +875,10 @@
 											<a href="images/gallery/fulls/Nurtured Stage/Post Pandemic/20221002_125429.jpg" class="landscape"><img src="images/gallery/fulls/Nurtured Stage/Post Pandemic/20221002_125429.jpg" alt="" /></a>
 											<a href="images/gallery/fulls/Nurtured Stage/Post Pandemic/20221002_161637.jpg" class="landscape"><img src="images/gallery/fulls/Nurtured Stage/Post Pandemic/20221002_161637.jpg" alt="" /></a>
 											
+											<a href="images/gallery/fulls/Nurtured Stage/Post Pandemic/IMG_20230718_170845.jpg" class="landscape"><img src="images/gallery/fulls/Nurtured Stage/Post Pandemic/IMG_20230718_170845.jpg" alt="" /></a>
+
+											<a href="images/gallery/fulls/Nurtured Stage/Post Pandemic/IMG_20230718_170818.jpg" ><img src="images/gallery/fulls/Nurtured Stage/Post Pandemic/IMG_20230718_170818.jpg" alt="" /></a>
+											<a href="images/gallery/fulls/Nurtured Stage/Post Pandemic/IMG_20230718_170808.jpg" ><img src="images/gallery/fulls/Nurtured Stage/Post Pandemic/IMG_20230718_170808.jpg" alt="" /></a>
 
 
 
@@ -1190,7 +1240,7 @@
 						<!-- Section -->
 					
 			</div>
-
+		</div> <!--to delete -->
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -1200,6 +1250,21 @@
 			<script src="assets/js/main.js"></script>
 
 			<script>
+				(function() {
+            const correctPassword = "yourpassword"; // Set your password here
+
+            window.checkPassword = function() {
+                const enteredPassword = document.getElementById("password").value;
+                if (enteredPassword === correctPassword) {
+                    document.getElementById("passwordWrapper").style.display = "none";
+                    document.getElementById("content").style.display = "block";
+                } else {
+                    alert("Incorrect password. Please try again.");
+                }
+            }
+        })();
+
+
 				window.addEventListener('load', () => {
 					const audio = document.getElementById('background-music');
 					audio.volume = 0.2; // Set volume to 20%
