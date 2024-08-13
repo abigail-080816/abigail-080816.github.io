@@ -48,7 +48,7 @@
 
 	</head>
 	<body class="is-preload">
-<!-- 
+
 
 		<div class="password-protection-wrapper" id="passwordWrapper">
 			<div class="password-form" id="passwordForm">
@@ -57,10 +57,10 @@
 				<input type="submit" class="password-submit" value="Submit" onclick="checkPassword()">
 			</div>
 		</div>
- -->
+ 
 
 
-		<!-- <div class="protected-content" id="content"> -->
+		<div class="protected-content" id="content"> 
 
 
 				<!-- Background Music -->
@@ -1673,7 +1673,7 @@
 						<!-- Section -->
 					
 			</div>
-		<!-- </div> password -->
+		</div><!--  password -->
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -1685,19 +1685,19 @@
 			<script>
 
 				//password
-		// 		(function() {
-        //     const correctPassword = "yourpassword"; // Set your password here
+		 		(function() {
+             const correctPassword = "yourpassword"; // Set your password here
 
-        //     window.checkPassword = function() {
-        //         const enteredPassword = document.getElementById("password").value;
-        //         if (enteredPassword === correctPassword) {
-        //             document.getElementById("passwordWrapper").style.display = "none";
-        //             document.getElementById("content").style.display = "block";
-        //         } else {
-        //             alert("Incorrect password. Please try again.");
-        //         }
-        //     }
-        // })();
+             window.checkPassword = function() {
+                 const enteredPassword = document.getElementById("password").value;
+                 if (enteredPassword === correctPassword) {
+                    document.getElementById("passwordWrapper").style.display = "none";
+                     document.getElementById("content").style.display = "block";
+                 } else {
+                     alert("Incorrect password. Please try again.");
+                 }
+             }
+         })();
 
 
 				window.addEventListener('load', () => {
