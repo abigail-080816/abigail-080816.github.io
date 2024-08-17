@@ -18,7 +18,7 @@
 	$window.on('load', function() {
 		window.setTimeout(function() {
 			$body.removeClass('is-preload');
-		}, 100);
+		}, 100); //Dating 100
 	});
 
 	// Hack: Enable IE workarounds.
